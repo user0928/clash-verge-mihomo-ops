@@ -1,0 +1,23 @@
+{
+  "skill_name": "clash-verge-mihomo-ops",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我的 Codex 每次对话都要先重连，跑到 5/5 才正常。我不想再手动打开 Windows 系统代理，想让 OpenAI/Codex 相关流量走 Clash，其他软件直连。请按之前稳定的 TUN/网卡模式检查并给出修复方案。",
+      "expected_output": "识别为启动器代理覆盖不完整的问题，采用 rule mode + TUN + OpenAI/Codex 规则 + 系统代理关闭，并按五项清单验证。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "TUN 开着时 B 站直播卡顿，Meta 网卡 MTU 之前像是 9000。只修 B 站，不要动我的全局拦截、节点和其他策略组。",
+      "expected_output": "只对当前订阅合并 tun.mtu 1500，前置 B 站直连和 cm.bilibili.com REJECT 例外，备份后重启/重载并做 mihomo 与真实媒体流验证。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Clash 的 TUN 模式下微信图片和小文件发不出去，帮我在原有配置上加规则，不要把系统代理打开，也不要重做 DNS。",
+      "expected_output": "保留 TUN、fake-IP、DNS 和其他分流，只添加微信进程/媒体域名 DIRECT 规则及必要的 fake-IP 例外，注意规则优先级、备份、生成配置校验和最终真实发送测试。",
+      "files": []
+    }
+  ]
+}
